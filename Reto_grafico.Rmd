@@ -35,7 +35,14 @@ US <- f[f$location == "United States", ]
 Italy <- f[f$location == "Italy", ]
 UK <- f[f$location == "United Kingdom", ]
 Spain <- f[f$location == "Spain", ]
+
+df_paises <- rbind(Japan, Canada, Germany, France, US, Italy, UK, Spain)
 ```
 
+Construimos el gráfico.
+```{r}
+capa1 <- ggplot(df_paises, aes(x = date, y = new_deaths_smoothed_per_million, group = location, colour = location))
+
+```
 
 
