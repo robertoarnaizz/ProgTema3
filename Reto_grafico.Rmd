@@ -1,0 +1,41 @@
+---
+title: "Reproduccion grafico"
+author: "Roberto Arnaiz Asesnio"
+date: "2/3/2022"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+Cargamos las librerias necesarias.
+```{r}
+
+library(readr)
+library(ggplot2)
+```
+
+
+Fase de carga de los datos.
+```{r}
+
+f <- read_csv("data/owid-covid-data.csv")
+```
+
+Fase de procesamiento de datos.
+```{r}
+#Extraemos los datos por paises que necesitaremos.
+Japan <- f[f$location == "Japan", ]
+Canada <- f[f$location == "Canada", ]
+Germany <- f[f$location == "Germany", ]
+France <- f[f$location == "France", ]
+US <- f[f$location == "United States", ]
+Italy <- f[f$location == "Italy", ]
+UK <- f[f$location == "United Kingdom", ]
+Spain <- f[f$location == "Spain", ]
+```
+
+
+
