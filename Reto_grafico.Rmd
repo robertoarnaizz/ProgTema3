@@ -20,7 +20,7 @@ library(ggplot2)
 
 Fase de carga de los datos.
 ```{r}
-
+rm(list = ls())
 f <- read_csv("data/owid-covid-data.csv")
 ```
 
@@ -43,6 +43,9 @@ Construimos el gráfico.
 ```{r}
 capa1 <- ggplot(df_paises, aes(x = date, y = new_deaths_smoothed_per_million, group = location, colour = location))
 capa2 <- geom_line()
+capa4 <- theme(legend.position = "none") #panel.background = element_rect(fill = "white")
+capa5 <- labs(x = "", y = "", title = "Daily new confirmed COVID-19 deaths per million people", subtitle = "7-day rolling for average. For some countries the number of confirmed deaths is much lower than \n the true number of deaths. This is because of limited testing and challenges in the atrribution of the \n cause of death")
+capa1 + capa2 + capa4 + capa5
 ```
 
 
