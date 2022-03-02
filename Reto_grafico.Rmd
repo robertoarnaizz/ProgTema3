@@ -42,7 +42,7 @@ df_paises <- rbind(Japan, Canada, Germany, France, US, Italy, UK, Spain)
 Construimos el gráfico.
 ```{r}
 capa1 <- ggplot(df_paises, aes(x = date, y = new_deaths_smoothed_per_million, group = location, colour = location))
-
+capa2 <- geom_line()
 ```
 
 
